@@ -3,6 +3,8 @@ var router = express.Router();
 var memberCtrl = require('../controllers/member');
 
 /* GET users listing. */
-router.post('/create',memberCtrl.create);
+router.get('/', function(req, res, next) {
+  res.send('respond with a resource');
+});
 
 module.exports = router;
