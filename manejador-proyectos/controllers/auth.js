@@ -1,13 +1,14 @@
 const async = require('async');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const config = require('config');
+//const config = require('config');
 const Member = require('../models/member');
 
-const jwtKey = config.get('secret.key');
+//const jwtKey = config.get('secret.key');
 
-/*function signup(req, res) {
-  async.parallel({
+function signup(req, res) {
+  console.log('signup');
+  /*async.parallel({
     salt: (callback) => {
       bcrypt.genSalt(10, callback);
     }
@@ -33,12 +34,12 @@ const jwtKey = config.get('secret.key');
         obj: error
       }));
     });
-  });
+  });*/
 }
 
 function login(req, res) {
-  const email = req.body.username;
-  const password = req.body.password;
+  console.log('login');
+  /*const password = req.body.password;
   async.parallel({
     member: callback => member.findOne({ _username: username })
       .select('_password _salt')
@@ -62,10 +63,10 @@ function login(req, res) {
         message: res.__('member.login.err')
       });
     }
-  });
-}*/
+  });*/
+}
 
 module.exports = {
-  /*signup,
-  login*/
+  signup,
+  login
 }
