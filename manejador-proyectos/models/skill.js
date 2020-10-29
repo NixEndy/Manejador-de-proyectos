@@ -3,8 +3,8 @@ const mongoosePaginate = require('mongoose-paginate-v2');
 
 
 const schema = mongoose.Schema({
-  _name: String,
-  _rank: String
+  _name: {type: String},
+  _rank: {type: String}
 });
 
 class Skills{

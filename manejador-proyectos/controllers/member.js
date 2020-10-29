@@ -51,10 +51,10 @@ function update(req, res) {
 
 
   Member.findOneAndUpdate({ _id: id }, member).then(member => res.status(200).json({
-    message: res.__('user.update.ok'),
+    message: res.__('member.update.ok'),
     objs: user
   })).catch(error => res.status(500).json({
-    message: res.__('user.update.err'),
+    message: res.__('member.update.err'),
     obj: error
   }));
 }

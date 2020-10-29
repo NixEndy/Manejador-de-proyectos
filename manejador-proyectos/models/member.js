@@ -2,16 +2,15 @@ const mongoose = require('mongoose');
 const mongoosePaginate = require('mongoose-paginate-v2');
 const skill = require('./skill');
 
-const schema = mongoose.Schema({
-  _name: String,
-  _birthdate: Date,
-  _curp: String,
-  _rfc: String,
-  _address: String,
-  _skills: [skill],
-  _username: String,
-  _password: String,
-  _salt: String,
+const schema = new mongoose.Schema({
+  _name: {type: String},
+  _birthdate: {type: Date},
+  _curp: {type: String},
+  _rfc: {type: String},
+  _address: {type: String},
+  _username: {type: String},
+  _password: {type: String},
+  _salt: {type: String},
 });
 
 class Member {
