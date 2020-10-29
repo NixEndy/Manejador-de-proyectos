@@ -17,7 +17,7 @@ class Stories{
     this._quiero = quiero,
     this._manera = manera,
     this._dado = dado,
-    this._cuando = cuando,
+    this._cuando = dado,
     this._entonces = entonces
   }
 
