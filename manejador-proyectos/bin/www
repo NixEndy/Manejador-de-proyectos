@@ -37,7 +37,7 @@ db.on('error', ()=>{
 
 db.on('open', ()=>{
   server.listen(port, ()=>{
-    consol.log("Conexion ok");
+    console.log("Conexion ok");
   });
 });
 
