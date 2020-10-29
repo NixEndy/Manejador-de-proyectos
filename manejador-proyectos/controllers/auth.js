@@ -37,10 +37,10 @@ function signup(req, res, next) {
 }
 
 function login(req, res) {
-  const username = req.body.email;
+  const username = req.body.username;
   const password = req.body.password;
   async.parallel({
-    user: callback => Member.findOne({ _email: email })
+    user: callback => Member.findOne({ _username: username })
       .select('_password _salt')
       .exec(callback)
   }, (err, result) => {
