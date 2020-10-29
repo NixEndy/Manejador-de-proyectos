@@ -1,4 +1,4 @@
-onst async = require('async');
+const async = require('async');
 const bcrypt = require('bcrypt');
 const Member = require('../models/member');
 

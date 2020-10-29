@@ -1,69 +1,44 @@
 const async = require('async');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-//const config = require('config');
 const Member = require('../models/member');
 
-//const jwtKey = config.get('secret.key');
 
-function signup(req, res) {
-  console.log('signup');
-  /*async.parallel({
+function signup(req, res, next) {
+
+  async.parallel({
     salt: (callback) => {
       bcrypt.genSalt(10, callback);
     }
   }, (err, result) => {
     bcrypt.hash(req.body.password, result.salt, (err, hash) => {
       let member = new Member({
-        _name: req.body.name,
-        _birthdate: req.body.birthdate,
-        _curp: req.body.curp,
-        _rfc: req.body.rfc,
-        _address: req.body.address,
-        _skillList: req.body.skillList,
-        _email: req.body.email,
-        _username: hash,
-        _salt: result.salt
+        _name : req.body.name,
+        _birthdate : req.body.birthdate,
+        _curp : req.body.curp,
+        _rfc : req.body.rfc,
+        _address : req.body.address,
+        _skills : req.body.skills,
+        _username : req.body.username,
+        _password : hash,
+        _salt : result.salt
       });
 
-      member.save().then(member => res.status(200).json({
-        message: res.__('member.register.ok'),
-        objs: member
-      })).catch(error => res.status(500).json({
-        message: res.__('member.register.err'),
-        obj: error
+      member.save().then(obj => res.status(200).json({
+        message: 'User created',
+        objs: obj
+      })).catch(err => res.status(500).json({
+        message: 'Unable to create user',
+        objs: err
       }));
     });
-  });*/
+  });
+
 }
 
 function login(req, res) {
   console.log('login');
-  /*const password = req.body.password;
-  async.parallel({
-    member: callback => member.findOne({ _username: username })
-      .select('_password _salt')
-      .exec(callback)
-  }, (err, result) => {
-    if (result.member) {
-      bcrypt.hash(password, result.member.salt, (err, hash) => {
-        if (hash === result.member.password) {
-          res.status(200).json({
-            message: res.__('member.login.ok'),
-            objs: jwt.sign(result.member.id, jwtKey)
-          });
-        } else {
-          res.status(403).json({
-            message: res.__('member.login.err')
-          });
-        }
-      });
-    } else {
-      res.status(403).json({
-        message: res.__('member.login.err')
-      });
-    }
-  });*/
+  
 }
 
 module.exports = {
