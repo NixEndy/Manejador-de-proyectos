@@ -3,12 +3,12 @@ const mongoosePaginate = require('mongoose-paginate-v2');
 
 
 const schema = mongoose.Schema({
-  _como: String,
-  _quiero: String,
-  _manera: Sting,
-  _dado: String,
-  _cuando: String,
-  _entonces: String
+  _como: {type: String},
+  _quiero: {type: String},
+  _manera: {type: String},
+  _dado: {type: String},
+  _cuando: {type: String},
+  _entonces: {type: String}
 });
 
 class Stories{

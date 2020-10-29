@@ -6,7 +6,7 @@ const Member = require('../models/member');
 
 function signup(req, res, next) {
 
-  async.parallel({
+  /*async.parallel({
     salt: (callback) => {
       bcrypt.genSalt(10, callback);
     }
@@ -32,12 +32,12 @@ function signup(req, res, next) {
         objs: err
       }));
     });
-  });
+  });*/
 
 }
 
 function login(req, res) {
-  const username = req.body.email;
+  /*const username = req.body.email;
   const password = req.body.password;
   async.parallel({
     user: callback => Member.findOne({ _email: email })
@@ -62,7 +62,7 @@ function login(req, res) {
         message: res.__('member.login.err')
       });
     }
-  });
+  });*/
 }
 
 module.exports = {
