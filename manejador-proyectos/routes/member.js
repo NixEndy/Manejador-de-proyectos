@@ -3,12 +3,12 @@ const router = express.Router();
 const memberCtrl = require('../controllers/member')
 
 /* GET users listing. */
-router.get('/:page?', controller.list);
+router.get('/:page?', memberCtrl.list);
 
-router.get('/id/:id', controller.index);
+router.get('/id/:id', memberCtrl.index);
 
-router.put('/:id', controller.update);
+router.put('/:id', memberCtrl.update);
 
-router.delete('/:id', controller.destroy);
+router.delete('/:id', memberCtrl.destroy);
 
 module.exports = router;

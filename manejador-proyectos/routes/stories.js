@@ -3,14 +3,14 @@ var router = express.Router();
 var storiesCtrl = require('../controllers/stories');
 
 /* GET users listing. */
-router.get('/', controller.list);
+router.get('/', storiesCtrl.list);
 
-router.get('/:id', controller.index);
+router.get('/:id', storiesCtrl.index);
 
-router.post('/', controller.create);
+router.post('/', storiesCtrl.create);
 
-router.put('/', controller.update);
+router.put('/', storiesCtrl.update);
 
-router.delete('/', controller.destroy);
+router.delete('/', storiesCtrl.destroy);
 
 module.exports = router;

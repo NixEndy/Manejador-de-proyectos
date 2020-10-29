@@ -8,7 +8,7 @@ const schema = mongoose.Schema({
   _manera: Sting,
   _dado: String,
   _cuando: String,
-  _entonces: String,
+  _entonces: String
 });
 
 class Stories{

@@ -37,8 +37,32 @@ function signup(req, res, next) {
 }
 
 function login(req, res) {
-  console.log('login');
-  
+  const username = req.body.email;
+  const password = req.body.password;
+  async.parallel({
+    user: callback => Member.findOne({ _email: email })
+      .select('_password _salt')
+      .exec(callback)
+  }, (err, result) => {
+    if (result.member) {
+      bcrypt.hash(password, result.member.salt, (err, hash) => {
+        if (hash === result.member.password) {
+          res.status(200).json({
+            message: res.__('member.login.ok'),
+            objs: jwt.sign(result.member.id, jwtKey)
+          });
+        } else {
+          res.status(403).json({
+            message: res.__('member.login.err')
+          });
+        }
+      });
+    } else {
+      res.status(403).json({
+        message: res.__('member.login.err')
+      });
+    }
+  });
 }
 
 module.exports = {

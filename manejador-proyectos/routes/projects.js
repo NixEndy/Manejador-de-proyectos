@@ -3,14 +3,14 @@ var router = express.Router();
 var projectCtrl = require('../controllers/project');
 
 /* GET users listing. */
-router.get('/', controller.list);
+router.get('/', projectCtrl.list);
 
-router.get('/:id', controller.index);
+router.get('/:id', projectCtrl.index);
 
-router.post('/', controller.create);
+router.post('/', projectCtrl.create);
 
-router.put('/', controller.update);
+router.put('/', projectCtrl.update);
 
-router.delete('/', controller.destroy);
+router.delete('/', projectCtrl.destroy);
 
 module.exports = router;
