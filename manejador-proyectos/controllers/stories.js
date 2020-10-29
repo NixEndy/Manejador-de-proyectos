@@ -2,7 +2,7 @@ const async = require('async');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 //const config = require('config');
-const Poject = require('../models/project');
+const Stories = require('../models/stories');
 
 //const jwtKey = config.get('secret.key');
 
