@@ -91,5 +91,11 @@ function list(req, res, next) {
     }));
   }
 
-
+  module.exports = {
+    list,
+    create,
+    update,
+    destroy,
+    index
+  }
 
